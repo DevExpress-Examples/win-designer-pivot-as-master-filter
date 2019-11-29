@@ -1,4 +1,4 @@
-# How to use Pivot Grid as a Master Filter item
+# How to use the Pivot dashboard item as a Master Filter item
 
 This example demonstrates how to make the [Pivot](https://docs.devexpress.com/Dashboard/15266/create-dashboards/create-dashboards-in-the-winforms-designer/designing-dashboard-items/pivot) dashboard item behaves like a single-select [Master Filter](https://docs.devexpress.com/Dashboard/116912/common-features/interactivity/master-filtering) item. This approach uses several features: filtering by [dashboard parameters](https://docs.devexpress.com/Dashboard/16135/create-dashboards/create-dashboards-in-the-winforms-designer/data-analysis/using-dashboard-parameters), [access to underlying controls](https://docs.devexpress.com/Dashboard/401095/create-the-designer-and-viewer-applications/winforms-designer/access-to-underlying-controls), [conditional formatting](https://docs.devexpress.com/Dashboard/114411/create-dashboards/create-dashboards-in-the-winforms-designer/designing-dashboard-items/pivot/conditional-formatting), and API methods to access the [underlying data](https://docs.devexpress.com/Dashboard/401192/common-features/underlying-and-displayed-data).
 
@@ -22,7 +22,7 @@ This example demonstrates how to make the [Pivot](https://docs.devexpress.com/Da
     }
     ```
 
-    The _skipFiltering_ variable indicates whether the _Expand / Collapse_ button is pressed and uses to skip setting filters in this case.
+    The _skipFiltering_ variable indicates whether the _Expand / Collapse_ button is pressed, and is used to skip setting filters in this case.
 
 3. The code snippet above does not set or clear dimension values inaccessible for the clicked element. You need to set parameter values that correspond only to the selected intersection and clear previous values in the dashboard parameters before setting new ones.
 
