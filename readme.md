@@ -22,7 +22,7 @@ This example demonstrates how to make the [Pivot](https://docs.devexpress.com/Da
     }
     ```
 
-    The _skipFiltering_ variable indicates whether the _Expand / Collapse_ button is pressed and uses to skip setting filters in this case.
+    The _skipFiltering_ variable indicates whether the _Expand / Collapse_ button is pressed, and is used to skip setting filters in this case.
 
 3. The code snippet above does not set or clear dimension values inaccessible for the clicked element. You need to set parameter values that correspond only to the selected intersection and clear previous values in the dashboard parameters before setting new ones.
 
