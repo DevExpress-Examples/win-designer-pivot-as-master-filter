@@ -1,0 +1,175 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Dashboard CurrencyCulture="en-US">
+  <Title Text="Dashboard" />
+  <DataSources>
+    <SqlDataSource Name="SQL Data Source 1" ComponentName="dashboardSqlDataSource1">
+      <Connection Name="nwind" ProviderKey="Access97">
+        <Parameters>
+          <Parameter Name="database" Value="nwind.mdb" />
+          <Parameter Name="read only" Value="1" />
+          <Parameter Name="generateConnectionHelper" Value="false" />
+          <Parameter Name="userid" Value="" />
+          <Parameter Name="password" Value="" />
+        </Parameters>
+      </Connection>
+      <Query Type="SelectQuery" Name="CustomerReports">
+        <Tables>
+          <Table Name="Orders" X="-80" Y="-20" Width="125" Height="312" />
+          <Table Name="Order Details" X="80" Y="-20" Width="125" Height="150" />
+          <Table Name="Products" X="230" Y="-20" Width="125" Height="258" />
+          <Table Name="Categories" X="80" Y="150" Width="125" Height="168" />
+          <Relation Type="Inner" Parent="Orders" Nested="Order Details">
+            <KeyColumn Parent="OrderID" Nested="OrderID" />
+          </Relation>
+          <Relation Type="Inner" Parent="Order Details" Nested="Products">
+            <KeyColumn Parent="ProductID" Nested="ProductID" />
+          </Relation>
+          <Relation Type="Inner" Parent="Products" Nested="Categories">
+            <KeyColumn Parent="CategoryID" Nested="CategoryID" />
+          </Relation>
+        </Tables>
+        <Columns>
+          <Column Table="Order Details" Name="Quantity" />
+          <Column Table="Products" Name="ProductName" Alias="Product" />
+          <Column Table="Categories" Name="CategoryName" Alias="Category" />
+          <Column Table="Orders" Name="OrderDate" />
+          <Column Table="Orders" Name="ShipCountry" Alias="Country" />
+          <Column Table="Orders" Name="ShipCity" Alias="City" />
+          <Column Table="Orders" Name="OrderID" />
+        </Columns>
+      </Query>
+      <ResultSchema>
+        <DataSet Name="SQL Data Source 1">
+          <View Name="CustomerReports">
+            <Field Name="Quantity" Type="Int16" />
+            <Field Name="Product" Type="String" />
+            <Field Name="Category" Type="String" />
+            <Field Name="OrderDate" Type="DateTime" />
+            <Field Name="Country" Type="String" />
+            <Field Name="City" Type="String" />
+            <Field Name="OrderID" Type="Int32" />
+          </View>
+        </DataSet>
+      </ResultSchema>
+      <ConnectionOptions CloseConnection="true" />
+    </SqlDataSource>
+  </DataSources>
+  <Parameters>
+    <Parameter Name="CountryParam" AllowNull="true" />
+    <Parameter Name="CityParam" AllowNull="true" />
+    <Parameter Name="CategoryParam" AllowNull="true" />
+    <Parameter Name="ProductParam" AllowNull="true" />
+  </Parameters>
+  <Items>
+    <Pivot ComponentName="pivotDashboardItem1" Name="Product Amount by Periods" DataSource="dashboardSqlDataSource1" DataMember="CustomerReports">
+      <DataItems>
+        <Dimension DataMember="Category" DefaultId="DataItem1" />
+        <Dimension DataMember="Product" DefaultId="DataItem2" />
+        <Measure DataMember="Quantity" DefaultId="DataItem0" />
+        <Dimension DataMember="City" DefaultId="DataItem4" />
+        <Dimension DataMember="Country" DefaultId="DataItem3" />
+      </DataItems>
+      <FormatRules>
+        <PivotItemFormatRule Name="FormatRule 1" DataItem="DataItem0" IntersectionLevelMode="AllLevels">
+          <FormatConditionExpression Expression="(?CityParam Is Not Null Or ?CountryParam Is Not Null Or ?ProductParam Is Not Null Or ?CategoryParam Is Not Null) And ([DataItem2] = ?ProductParam Or ?ProductParam Is Null) And ([DataItem1] = ?CategoryParam Or ?CategoryParam Is Null) And ([DataItem3] = ?CountryParam Or ?CountryParam Is Null) And ([DataItem4] = ?CityParam Or ?CityParam Is Null)">
+            <AppearanceSettings AppearanceType="Blue" />
+          </FormatConditionExpression>
+          <PivotItemFormatRuleLevel />
+        </PivotItemFormatRule>
+        <PivotItemFormatRule Name="FormatRule 2" DataItem="DataItem0" IntersectionLevelMode="FirstLevel">
+          <FormatConditionExpression Expression="(?CityParam Is Not Null Or ?CountryParam Is Not Null Or ?ProductParam Is Not Null Or ?CategoryParam Is Not Null) And ([DataItem2] = ?ProductParam Or ?ProductParam Is Null) And ([DataItem1] = ?CategoryParam Or ?CategoryParam Is Null) And ([DataItem3] = ?CountryParam Or ?CountryParam Is Null) And ([DataItem4] = ?CityParam Or ?CityParam Is Null)">
+            <AppearanceSettings AppearanceType="Custom" BackColor="-2299659" ForeColor="-16777216" />
+          </FormatConditionExpression>
+          <PivotItemFormatRuleLevel />
+        </PivotItemFormatRule>
+      </FormatRules>
+      <Columns>
+        <Column DefaultId="DataItem3" />
+        <Column DefaultId="DataItem4" />
+      </Columns>
+      <Rows>
+        <Row DefaultId="DataItem1" />
+        <Row DefaultId="DataItem2" />
+      </Rows>
+      <Values>
+        <Value DefaultId="DataItem0" />
+      </Values>
+    </Pivot>
+    <Grid ComponentName="gridDashboardItem1" Name="Product Amount by Company" DataSource="dashboardSqlDataSource1" DataMember="CustomerReports" FilterString="([DataItem8] = ?ProductParam Or ?ProductParam Is Null) And ([DataItem7] = ?CategoryParam Or ?CategoryParam Is Null) And ([DataItem2] = ?CountryParam Or ?CountryParam Is Null) And ([DataItem3] = ?CityParam Or ?CityParam Is Null)">
+      <DataItems>
+        <Dimension DataMember="OrderDate" DateTimeGroupInterval="None" DefaultId="DataItem0" />
+        <Dimension DataMember="Country" DefaultId="DataItem2" />
+        <Dimension DataMember="City" DefaultId="DataItem3" />
+        <Measure DataMember="Quantity" DefaultId="DataItem4" />
+        <Dimension DataMember="City" DefaultId="DataItem5" />
+        <Dimension DataMember="Country" DefaultId="DataItem6" />
+        <Dimension DataMember="Category" DefaultId="DataItem7" />
+        <Dimension DataMember="Product" DefaultId="DataItem8" />
+        <Dimension DataMember="OrderID" DefaultId="DataItem1">
+          <NumericFormat FormatType="Number" Precision="0" Unit="Ones" />
+        </Dimension>
+      </DataItems>
+      <HiddenDimensions>
+        <Dimension DefaultId="DataItem5" />
+        <Dimension DefaultId="DataItem6" />
+        <Dimension DefaultId="DataItem7" />
+        <Dimension DefaultId="DataItem8" />
+      </HiddenDimensions>
+      <GridColumns>
+        <GridDimensionColumn>
+          <Dimension DefaultId="DataItem1" />
+        </GridDimensionColumn>
+        <GridDimensionColumn>
+          <Dimension DefaultId="DataItem0" />
+        </GridDimensionColumn>
+        <GridDimensionColumn>
+          <Dimension DefaultId="DataItem2" />
+        </GridDimensionColumn>
+        <GridDimensionColumn>
+          <Dimension DefaultId="DataItem3" />
+        </GridDimensionColumn>
+        <GridMeasureColumn>
+          <Measure DefaultId="DataItem4" />
+        </GridMeasureColumn>
+      </GridColumns>
+      <GridOptions />
+    </Grid>
+    <Chart ComponentName="chartDashboardItem1" Name="Quantity by Date" DataSource="dashboardSqlDataSource1" DataMember="CustomerReports" FilterString="([DataItem4] = ?ProductParam Or ?ProductParam Is Null) And ([DataItem5] = ?CategoryParam Or ?CategoryParam Is Null) And ([DataItem3] = ?CountryParam Or ?CountryParam Is Null) And ([DataItem2] = ?CityParam Or ?CityParam Is Null)">
+      <DataItems>
+        <Measure DataMember="Quantity" DefaultId="DataItem0" />
+        <Dimension DataMember="OrderDate" DateTimeGroupInterval="MonthYear" DefaultId="DataItem1" />
+        <Dimension DataMember="City" DefaultId="DataItem2" />
+        <Dimension DataMember="Country" DefaultId="DataItem3" />
+        <Dimension DataMember="Product" DefaultId="DataItem4" />
+        <Dimension DataMember="Category" DefaultId="DataItem5" />
+      </DataItems>
+      <HiddenDimensions>
+        <Dimension DefaultId="DataItem2" />
+        <Dimension DefaultId="DataItem3" />
+        <Dimension DefaultId="DataItem4" />
+        <Dimension DefaultId="DataItem5" />
+      </HiddenDimensions>
+      <Arguments>
+        <Argument DefaultId="DataItem1" />
+      </Arguments>
+      <Panes>
+        <Pane Name="Pane 1">
+          <Series>
+            <Simple>
+              <Value DefaultId="DataItem0" />
+            </Simple>
+          </Series>
+        </Pane>
+      </Panes>
+    </Chart>
+  </Items>
+  <LayoutTree>
+    <LayoutGroup Weight="100">
+      <LayoutGroup Orientation="Vertical" Weight="63.304093567251464">
+        <LayoutItem DashboardItem="pivotDashboardItem1" Weight="49.815498154981547" />
+        <LayoutItem DashboardItem="chartDashboardItem1" Weight="50.184501845018453" />
+      </LayoutGroup>
+      <LayoutItem DashboardItem="gridDashboardItem1" Weight="36.695906432748536" />
+    </LayoutGroup>
+  </LayoutTree>
+</Dashboard>
