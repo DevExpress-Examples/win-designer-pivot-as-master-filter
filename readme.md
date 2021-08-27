@@ -1,3 +1,8 @@
+<!-- default badges list -->
+![](https://img.shields.io/endpoint?url=https://codecentral.devexpress.com/api/v1/VersionRange/224859353/19.2.4%2B)
+[![](https://img.shields.io/badge/Open_in_DevExpress_Support_Center-FF7200?style=flat-square&logo=DevExpress&logoColor=white)](https://supportcenter.devexpress.com/ticket/details/T837173)
+[![](https://img.shields.io/badge/📖_How_to_use_DevExpress_Examples-e9f6fc?style=flat-square)](https://docs.devexpress.com/GeneralInformation/403183)
+<!-- default badges end -->
 # How to use the Pivot dashboard item as a Master Filter item
 
 This example demonstrates how to make the [Pivot](https://docs.devexpress.com/Dashboard/15266/create-dashboards/create-dashboards-in-the-winforms-designer/designing-dashboard-items/pivot) dashboard item behaves like a single-select [Master Filter](https://docs.devexpress.com/Dashboard/116912/common-features/interactivity/master-filtering) item. This approach uses several features: filtering by [dashboard parameters](https://docs.devexpress.com/Dashboard/16135/create-dashboards/create-dashboards-in-the-winforms-designer/data-analysis/using-dashboard-parameters), [access to underlying controls](https://docs.devexpress.com/Dashboard/401095/create-the-designer-and-viewer-applications/winforms-designer/access-to-underlying-controls), [conditional formatting](https://docs.devexpress.com/Dashboard/114411/create-dashboards/create-dashboards-in-the-winforms-designer/designing-dashboard-items/pivot/conditional-formatting), and API methods to access the [underlying data](https://docs.devexpress.com/Dashboard/401192/common-features/underlying-and-displayed-data).
