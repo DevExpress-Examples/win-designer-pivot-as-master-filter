@@ -3,11 +3,13 @@
 [![](https://img.shields.io/badge/Open_in_DevExpress_Support_Center-FF7200?style=flat-square&logo=DevExpress&logoColor=white)](https://supportcenter.devexpress.com/ticket/details/T837173)
 [![](https://img.shields.io/badge/📖_How_to_use_DevExpress_Examples-e9f6fc?style=flat-square)](https://docs.devexpress.com/GeneralInformation/403183)
 <!-- default badges end -->
-# How to use the Pivot dashboard item as a Master Filter item
+# 	Dashboard for WinForms - How to use the Pivot dashboard item as a Master Filter item
 
 This example demonstrates how to make the [Pivot](https://docs.devexpress.com/Dashboard/15266/create-dashboards/create-dashboards-in-the-winforms-designer/designing-dashboard-items/pivot) dashboard item behaves like a single-select [Master Filter](https://docs.devexpress.com/Dashboard/116912/common-features/interactivity/master-filtering) item. This approach uses several features: filtering by [dashboard parameters](https://docs.devexpress.com/Dashboard/16135/create-dashboards/create-dashboards-in-the-winforms-designer/data-analysis/using-dashboard-parameters), [access to underlying controls](https://docs.devexpress.com/Dashboard/401095/create-the-designer-and-viewer-applications/winforms-designer/access-to-underlying-controls), [conditional formatting](https://docs.devexpress.com/Dashboard/114411/create-dashboards/create-dashboards-in-the-winforms-designer/designing-dashboard-items/pivot/conditional-formatting), and API methods to access the [underlying data](https://docs.devexpress.com/Dashboard/401192/common-features/underlying-and-displayed-data).
 
 ![](images/pivot-as-master-filter-item.png)
+
+## Example Overview
 
 1.	Create a set of dashboard parameters corresponding to dimensions in the [Pivot](https://docs.devexpress.com/Dashboard/15266/create-dashboards/create-dashboards-in-the-winforms-designer/designing-dashboard-items/pivot) item you want to use for filtering. This example uses four parameters: _ProductParam_, _CategoryParam_, _CountryParam_, and _CityParam_. They correspond to the _Product_, _Category_, _Country_, and _City_ fields used in the rows and columns section of the _Product Amount by Periods_ Pivot item.
 
@@ -113,3 +115,16 @@ The steps above are sufficient to implement the minimal filtering functionality.
         }
     }
     ```
+
+## Files to Review
+
+* [Form1.cs](./CS/DesignerSample/Form1.cs) / (VB: [Form1.vb](./VB/DesignerSample/Form1.vb))
+
+## Documentation
+
+- [Master Filtering in the WinForms Designer](https://docs.devexpress.com/Dashboard/15702/winforms-dashboard/winforms-designer/create-dashboards-in-the-winforms-designer/interactivity/master-filtering)
+- [The Pivot dashboard item](https://docs.devexpress.com/Dashboard/15266/winforms-dashboard/winforms-designer/create-dashboards-in-the-winforms-designer/dashboard-item-settings/pivot)
+- [Dashboard Parameters in Windows Forms](https://docs.devexpress.com/Dashboard/16135/winforms-dashboard/winforms-designer/create-dashboards-in-the-winforms-designer/data-analysis/dashboard-parameters)
+- [Access to Underlying Controls in the WinForms Dashboard Designer](https://docs.devexpress.com/Dashboard/401095/winforms-dashboard/winforms-designer/ui-elements-and-customization/access-to-underlying-controls)
+- [Underlying and Displayed Data](https://docs.devexpress.com/Dashboard/401192/common-features/underlying-and-displayed-data)
+- [Conditional Formatting](https://docs.devexpress.com/Dashboard/114401/winforms-dashboard/winforms-designer/create-dashboards-in-the-winforms-designer/appearance-customization/conditional-formatting)
