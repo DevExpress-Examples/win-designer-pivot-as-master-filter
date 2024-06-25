@@ -2,6 +2,7 @@
 ![](https://img.shields.io/endpoint?url=https://codecentral.devexpress.com/api/v1/VersionRange/224859353/19.2.4%2B)
 [![](https://img.shields.io/badge/Open_in_DevExpress_Support_Center-FF7200?style=flat-square&logo=DevExpress&logoColor=white)](https://supportcenter.devexpress.com/ticket/details/T837173)
 [![](https://img.shields.io/badge/📖_How_to_use_DevExpress_Examples-e9f6fc?style=flat-square)](https://docs.devexpress.com/GeneralInformation/403183)
+[![](https://img.shields.io/badge/💬_Leave_Feedback-feecdd?style=flat-square)](#does-this-example-address-your-development-requirementsobjectives)
 <!-- default badges end -->
 # 	Dashboard for WinForms - How to use the Pivot dashboard item as a Master Filter item
 
@@ -128,3 +129,10 @@ The steps above are sufficient to implement the minimal filtering functionality.
 - [Access to Underlying Controls in the WinForms Dashboard Designer](https://docs.devexpress.com/Dashboard/401095/winforms-dashboard/winforms-designer/ui-elements-and-customization/access-to-underlying-controls)
 - [Underlying and Displayed Data](https://docs.devexpress.com/Dashboard/401192/common-features/underlying-and-displayed-data)
 - [Conditional Formatting](https://docs.devexpress.com/Dashboard/114401/winforms-dashboard/winforms-designer/create-dashboards-in-the-winforms-designer/appearance-customization/conditional-formatting)
+<!-- feedback -->
+## Does this example address your development requirements/objectives?
+
+[<img src="https://www.devexpress.com/support/examples/i/yes-button.svg"/>](https://www.devexpress.com/support/examples/survey.xml?utm_source=github&utm_campaign=win-designer-pivot-as-master-filter&~~~was_helpful=yes) [<img src="https://www.devexpress.com/support/examples/i/no-button.svg"/>](https://www.devexpress.com/support/examples/survey.xml?utm_source=github&utm_campaign=win-designer-pivot-as-master-filter&~~~was_helpful=no)
+
+(you will be redirected to DevExpress.com to submit your response)
+<!-- feedback end -->
