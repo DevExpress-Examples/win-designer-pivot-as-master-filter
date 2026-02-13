@@ -130,7 +130,7 @@ The steps above are sufficient to implement the minimal filtering functionality.
 - [Underlying and Displayed Data](https://docs.devexpress.com/Dashboard/401192/common-features/underlying-and-displayed-data)
 - [Conditional Formatting](https://docs.devexpress.com/Dashboard/114401/winforms-dashboard/winforms-designer/create-dashboards-in-the-winforms-designer/appearance-customization/conditional-formatting)
 <!-- feedback -->
-## Does this example address your development requirements/objectives?
+## Does This Example Address Your Development Requirements/Objectives?
 
 [<img src="https://www.devexpress.com/support/examples/i/yes-button.svg"/>](https://www.devexpress.com/support/examples/survey.xml?utm_source=github&utm_campaign=win-designer-pivot-as-master-filter&~~~was_helpful=yes) [<img src="https://www.devexpress.com/support/examples/i/no-button.svg"/>](https://www.devexpress.com/support/examples/survey.xml?utm_source=github&utm_campaign=win-designer-pivot-as-master-filter&~~~was_helpful=no)
 
